@@ -61,7 +61,7 @@ const Dashboard = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600"></div>
       </div>
     );
   }
@@ -73,7 +73,7 @@ const Dashboard = () => {
       change: '+12%',
       changeType: 'positive',
       icon: Users,
-      color: 'bg-blue-500'
+      color: 'bg-red-500'
     },
     {
       name: 'Total Projects',
@@ -133,8 +133,8 @@ const Dashboard = () => {
       {/* Page header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <h1 className="text-2xl font-bold text-gray-100">Dashboard</h1>
+          <p className="mt-1 text-sm text-gray-300">
             Welcome back! Here's what's happening with your platform today.
           </p>
         </div>
@@ -164,7 +164,7 @@ const Dashboard = () => {
           
           {/* Quick Actions */}
           <div className="card p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Quick Actions</h3>
+            <h3 className="text-lg font-medium text-gray-100 mb-4">Quick Actions</h3>
             <div className="space-y-3">
               {quickActions.map((action) => {
                 const Icon = action.icon;
@@ -172,12 +172,12 @@ const Dashboard = () => {
                   <a
                     key={action.name}
                     href={action.href}
-                    className="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+                    className="flex items-center p-3 rounded-lg border border-gray-600 hover:bg-gray-700 transition-colors"
                   >
                     <Icon className="h-5 w-5 text-gray-400 mr-3" />
                     <div>
-                      <p className="text-sm font-medium text-gray-900">{action.name}</p>
-                      <p className="text-xs text-gray-500">{action.description}</p>
+                      <p className="text-sm font-medium text-gray-100">{action.name}</p>
+                      <p className="text-xs text-gray-300">{action.description}</p>
                     </div>
                   </a>
                 );
@@ -191,16 +191,16 @@ const Dashboard = () => {
       {analytics && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="card p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">User Registrations</h3>
+            <h3 className="text-lg font-medium text-gray-100 mb-4">User Registrations</h3>
             <Chart
               data={analytics.user_registrations}
               type="line"
               title="User Growth"
-              color="blue"
+              color="red"
             />
           </div>
           <div className="card p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">Project Creation</h3>
+            <h3 className="text-lg font-medium text-gray-100 mb-4">Project Creation</h3>
             <Chart
               data={analytics.project_creations}
               type="bar"
@@ -217,14 +217,14 @@ const Dashboard = () => {
           <div className="card p-6">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Clock className="h-8 w-8 text-blue-500" />
+                <Clock className="h-8 w-8 text-red-500" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-500">Last 24 Hours</p>
-                <p className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm font-medium text-gray-400">Last 24 Hours</p>
+                <p className="text-2xl font-semibold text-gray-100">
                   {analytics.last_24h?.new_users || 0}
                 </p>
-                <p className="text-sm text-gray-500">New Users</p>
+                <p className="text-sm text-gray-400">New Users</p>
               </div>
             </div>
           </div>
@@ -235,11 +235,11 @@ const Dashboard = () => {
                 <CheckCircle className="h-8 w-8 text-green-500" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-500">Successful Deployments</p>
-                <p className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm font-medium text-gray-400">Successful Deployments</p>
+                <p className="text-2xl font-semibold text-gray-100">
                   {analytics.last_24h?.successful_deployments || 0}
                 </p>
-                <p className="text-sm text-gray-500">Last 24 Hours</p>
+                <p className="text-sm text-gray-400">Last 24 Hours</p>
               </div>
             </div>
           </div>
@@ -250,11 +250,11 @@ const Dashboard = () => {
                 <AlertCircle className="h-8 w-8 text-yellow-500" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-500">Failed Deployments</p>
-                <p className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm font-medium text-gray-400">Failed Deployments</p>
+                <p className="text-2xl font-semibold text-gray-100">
                   {analytics.last_24h?.failed_deployments || 0}
                 </p>
-                <p className="text-sm text-gray-500">Last 24 Hours</p>
+                <p className="text-sm text-gray-400">Last 24 Hours</p>
               </div>
             </div>
           </div>
@@ -265,11 +265,11 @@ const Dashboard = () => {
                 <Activity className="h-8 w-8 text-purple-500" />
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-500">Active Sessions</p>
-                <p className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm font-medium text-gray-400">Active Sessions</p>
+                <p className="text-2xl font-semibold text-gray-100">
                   {analytics.current?.active_sessions || 0}
                 </p>
-                <p className="text-sm text-gray-500">Currently Online</p>
+                <p className="text-sm text-gray-400">Currently Online</p>
               </div>
             </div>
           </div>

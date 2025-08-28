@@ -33,30 +33,30 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-primary-100">
-            <Lock className="h-6 w-6 text-primary-600" />
+          <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-red-900">
+            <Lock className="h-6 w-6 text-red-400" />
           </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-100">
             Admin Login
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-gray-300">
             Sign in to access the admin dashboard
           </p>
         </div>
         
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
-            <div className="rounded-md bg-danger-50 p-4">
-              <div className="text-sm text-danger-700">{error}</div>
+            <div className="rounded-md bg-red-900/50 p-4 border border-red-700">
+              <div className="text-sm text-red-200">{error}</div>
             </div>
           )}
           
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-200">
                 Email address
               </label>
               <input
@@ -73,7 +73,7 @@ const Login = () => {
             </div>
             
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-200">
                 Password
               </label>
               <div className="relative mt-1">
@@ -107,7 +107,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -118,11 +118,11 @@ const Login = () => {
           </div>
 
           {/* Development Hint */}
-          <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
-            <p className="text-xs text-blue-700 text-center">
+          <div className="mt-4 p-3 bg-gray-800 border border-gray-700 rounded-md">
+            <p className="text-xs text-gray-200 text-center">
               <strong>Development Mode:</strong> Use these credentials to test the admin dashboard
             </p>
-            <p className="text-xs text-blue-600 text-center mt-1">
+            <p className="text-xs text-gray-300 text-center mt-1">
               Email: <code>theanandsingh76@gmail.com</code> | Password: <code>Anand@#12345Singh</code>
             </p>
           </div>
