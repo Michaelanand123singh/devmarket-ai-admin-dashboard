@@ -117,15 +117,7 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Development Hint */}
-          <div className="mt-4 p-3 bg-gray-800 border border-gray-700 rounded-md">
-            <p className="text-xs text-gray-200 text-center">
-              <strong>Development Mode:</strong> Use these credentials to test the admin dashboard
-            </p>
-            <p className="text-xs text-gray-300 text-center mt-1">
-              Email: <code>theanandsingh76@gmail.com</code> | Password: <code>Anand@#12345Singh</code>
-            </p>
-          </div>
+        
         </form>
       </div>
     </div>
